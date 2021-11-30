@@ -22,8 +22,15 @@ def predict_salary(years_of_experience):
     # Splits the testing data and the training data
     train_X, test_X, train_y, test_y = train_test_split(X, y, random_state=0, test_size=.20)
 
+    # Initialise the model
+    model = LinearRegression()
+    model.fit(train_X, train_y)
+
+    # Make the prediction
+    y_prediction = model.predict([[years_of_experience]])
+    print('PREDICTION:', y_prediction)
 
 
-predict_salary(10)
+predict_salary(14)
 
 
