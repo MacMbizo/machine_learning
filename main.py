@@ -30,7 +30,20 @@ def predict_salary(years_of_experience):
     y_prediction = model.predict([[years_of_experience]])
     print('PREDICTION:', y_prediction)
 
+    # This is used to check how accurate the model is
+    y_test_prediction = model.predict(test_X)
+    y_line = model.predict(X)
 
-predict_salary(14)
+    # Getting some extra information (for graph)
+    print('Slope:', model.coef_)
+    print('Intercept:', model.intercept_)
+    print('MAE:', mean_absolute_error(test_y, y_test_prediction))
+    print('r2', r2_score(test_y, y_test_prediction))
+
+
+
+
+
+predict_salary(4)
 
 
