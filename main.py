@@ -40,7 +40,12 @@ def predict_salary(years_of_experience):
     print('MAE:', mean_absolute_error(test_y, y_test_prediction))
     print('r2', r2_score(test_y, y_test_prediction))
 
-
+# Plot the data
+    plt.scatter(X,y, s=12)
+    plt.xlabel('Years (EXp)')
+    plt.ylabel('Salary')
+    plt.plot(X, y_line, color='r')
+    plt.show()
 
 
 
